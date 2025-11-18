@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f7f0e8;
+    color: #3e2c1c;
+}
+
+header {
+    background: #c59b6d;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container {
+    width: 75%;
+    margin: 30px auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.lang-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    background: #d2a679;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    transform: scale(1.05);
+}
+
+.category-list, .item-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    text-align: center;
+    font-size: x-large
+}
+
+.back-btn {
+    background: #c59b6d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .category-list, .item-list {
+        grid-template-columns: 1fr; /* Одна колонка - вертикальное расположение */
+    }
+    
+    .container {
+        width: 90%; /* Увеличим ширину контейнера на мобильных */
+    }
+    
+    header {
+        padding: 15px;
+        font-size: 24px;
+    }
+}
