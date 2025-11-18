@@ -2,10 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+<header>Admin Panel</header>
+
+<div class="admin-container">
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('categoriesTab')">Categories</div>
+        <div class="tab" onclick="showTab('itemsTab')">Items</div>
+    </div>
+
+    <!-- Categories -->
+    <div id="categoriesTab">
+        <div class="form-box">
+            <h3>Add Category</h3>
+            <input id="cat_name_ru" placeholder="Category name (RU)">
+            <input id="cat_name_en" placeholder="Category name (EN)">
+            <input id="cat_image" placeholder="Image URL">
+            <button onclick="addCategory()">Add</button>
+        </div>
+
+        <h3>All Categories</h3>
+        <div class="admin-list" id="categoriesList"></div>
+    </div>
+
+    <!-- Items -->
+    <div id="itemsTab" style="display:none;">
+        <div class="form-box">
+            <h3>Add Item</h3>
+
+            <select id="item_category"></select>
+
+            <input id="item_name_ru" placeholder="Item name (RU)">
+            <input id="item_name_en" placeholder="Item name (EN)">
+            <input id="item_desc_ru" placeholder="Description (RU)">
+            <input id="item_desc_en" placeholder="Description (EN)">
+            <input id="item_price" placeholder="Price">
+            <input id="item_image" placeholder="Image URL">
+
+            <button onclick="addItem()">Add</button>
+        </div>
+
+        <h3>All Items</h3>
+        <div class="admin-list" id="itemsList"></div>
+    </div>
+
+</div>
+
+<script src="js/admin.js"></script>
+
 </body>
 </html>
