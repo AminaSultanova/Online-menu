@@ -1,3 +1,5 @@
+/* ==== ОСНОВНЫЕ СТИЛИ ==== */
+
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
@@ -12,6 +14,17 @@ header {
     color: white;
     font-size: 50px;
     font-weight: bold;
+    position: relative;
+}
+
+.header {
+    background: #c59b6d;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
 }
 
 .container {
@@ -22,6 +35,8 @@ header {
 .center {
     text-align: center;
 }
+
+/* ==== КНОПКИ ВЫБОРА ЯЗЫКА ==== */
 
 .lang-btn {
     display: block;
@@ -41,12 +56,16 @@ header {
     transform: scale(1.05);
 }
 
-.category-list, .item-list {
+/* ==== ГРИД КАТЕГОРИЙ / ТОВАРОВ ==== */
+
+.category-list,
+.item-list {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
+/* ==== КАРТОЧКИ ==== */
 
 .card {
     background: white;
@@ -69,8 +88,15 @@ header {
 .card h3 {
     margin: 10px 0 5px;
     text-align: center;
-    font-size: x-large
+    font-size: 24px;
 }
+
+.card p {
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+/* ==== КНОПКА НАЗАД ==== */
 
 .back-btn {
     background: #c59b6d;
@@ -80,13 +106,15 @@ header {
     border-radius: 12px;
     margin-bottom: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: 0.3s;
 }
 
 .back-btn:hover {
     transform: scale(1.05);
 }
+
+/* ==== КНОПКА СМЕНЫ ЯЗЫКА ==== */
 
 .lang-switch {
     position: absolute;
@@ -95,84 +123,71 @@ header {
     background: white;
     color: #392819;
     border: none;
-    padding: 6px 10px;
+    padding: 10px 14px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
-}
-header {
-    position: relative; /* чтобы кнопка внутри позиционировалась */
 }
 
 @media (max-width: 768px) {
-    .category-list, .item-list {
-        grid-template-columns: 1fr; /* Одна колонка - вертикальное расположение */
-    }
-    
+
     .container {
-        width: 90%; /* Увеличим ширину контейнера на мобильных */
+        width: 92%;
+        margin-top: 20px;
     }
-    
-    header {
-        padding: 15px;
-        font-size: 50px;
+
+    /* === Категории: 1 колонка === */
+    .category-list {
+        grid-template-columns: 1fr !important;
+        gap: 25px;
+    }
+
+    /* === Товары: 2 колонки === */
+    .item-list {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+
+    /* Заголовки */
+    header,
+    .header {
+        padding: 16px;
+        font-size: 36px !important;
+    }
+
+    /* Карточки */
+    .card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .card h3 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    .card p {
+        font-size: 18px !important;
+        text-align: center;
+    }
+
+    /* Кнопка назад */
+    .back-btn {
+        font-size: 18px !important;
+        padding: 12px 24px !important;
+        border-radius: 14px;
+    }
+
+    /* Кнопка переключения языка */
+    .lang-switch {
+        top: 12px;
+        right: 15px;
+        padding: 10px 12px;
+        font-size: 18px;
     }
 }
-
-.admin-container {
-            width: 90%;
-            margin: 20px auto;
-        }
-        .tabs {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .tab {
-            padding: 10px 15px;
-            background: #c59b6d;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .tab.active {
-            background: #8a6643;
-        }
-        .form-box {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 15px;
-            border-radius: 8px;
-            border: 1px solid #aaa;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: #c59b6d;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .admin-list {
-            margin-top: 20px;
-        }
-        .admin-item {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 13px rgba(0,0,0,0.07);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .delete-btn {
-            background: #b33a3a;
-        }

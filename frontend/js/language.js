@@ -7,17 +7,18 @@ function getLangText(en, ru) {
     return localStorage.getItem("lang") === "ru" ? ru : en;
 }
 
-// меняем заголовки
 window.addEventListener("DOMContentLoaded", () => {
-    const title = document.getElementById("title");
+    const titleText = document.querySelector(".title-text");
+    if (titleText) {
+        titleText.textContent = getLangText("Menu", "Меню");
+    }
 
-    if (title) {
-        const titleText = document.querySelector(".title-text");
-        if (titleText) {
-            titleText.textContent = getLangText("Menu", "Меню");
-        }
+    const backBtn = document.querySelector(".back-btn");
+    if (backBtn) {
+        backBtn.textContent = getLangText("← Back", "← Назад");
     }
 });
+
 
 function toggleLanguage() {
     let current = localStorage.getItem("lang") || "ru";
