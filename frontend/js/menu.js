@@ -33,7 +33,7 @@ async function loadItems() {
             <img src="${item.image_url}">
             <h3>${lang === "ru" ? item.name_ru : item.name_en}</h3>
             <p>${lang === "ru" ? item.description_ru : item.description_en}</p>
-            <p><b>${item.price} сом</b></p>
+            <p><b>${item.price} KGS</b></p>
         </div>
         `)
         .join("");
