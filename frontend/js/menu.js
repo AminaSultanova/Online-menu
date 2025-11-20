@@ -1,6 +1,5 @@
 const API = "http://localhost:3000/api";
 
-// Категории
 async function loadCategories() {
     const res = await fetch(`${API}/categories`);
     const categories = await res.json();
@@ -17,8 +16,6 @@ async function loadCategories() {
         .join("");
 }
 
-
-// Товары в категории
 async function loadItems() {
     const id = new URLSearchParams(location.search).get("cat");
 
@@ -39,7 +36,6 @@ async function loadItems() {
         .join("");
 }
 
-// переход
 function openCategory(id) {
     window.location.href = `items.html?cat=${id}`;
 }
@@ -48,6 +44,5 @@ function goBack() {
     window.location.href = "categories.html";
 }
 
-// авто-загрузка
 if (location.pathname.includes("categories.html")) loadCategories();
 if (location.pathname.includes("items.html")) loadItems();

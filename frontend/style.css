@@ -136,26 +136,22 @@ header {
         margin-top: 20px;
     }
 
-    /* === Категории: 1 колонка === */
     .category-list {
         grid-template-columns: 1fr !important;
         gap: 25px;
     }
 
-    /* === Товары: 2 колонки === */
     .item-list {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px;
     }
 
-    /* Заголовки */
     header,
     .header {
         padding: 16px;
         font-size: 36px !important;
     }
 
-    /* Карточки */
     .card {
         padding: 20px;
         border-radius: 18px;

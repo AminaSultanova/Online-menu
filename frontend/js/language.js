@@ -25,5 +25,5 @@ function toggleLanguage() {
     let next = current === "ru" ? "en" : "ru";
     localStorage.setItem("lang", next);
 
-    location.reload(); // перезагружаем страницу, чтобы обновить текст
+    location.reload();
 }
