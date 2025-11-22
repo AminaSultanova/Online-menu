@@ -74,7 +74,12 @@ header {
     box-shadow: 0 4px 13px rgba(0,0,0,0.1);
     transition: 0.3s;
     cursor: pointer;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 
 .card:hover {
     transform: scale(1.03);
@@ -82,8 +87,11 @@ header {
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 14px;
 }
+
 
 .card h3 {
     margin: 10px 0 5px;
@@ -155,11 +163,13 @@ header {
     .card {
         padding: 20px;
         border-radius: 18px;
+        min-height: 450px !important;
     }
 
     .card img {
         width: 100%;
         border-radius: 16px;
+        height: 400px !important;
     }
 
     .card h3 {
