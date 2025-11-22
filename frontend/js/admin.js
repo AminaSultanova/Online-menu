@@ -16,7 +16,6 @@ async function loadCategoriesAdmin() {
     const res = await fetch(`${API}/categories`);
     const categories = await res.json();
 
-    // Fill list
     document.getElementById("categoriesList").innerHTML = categories
         .map(c => `
             <div class="admin-item">
@@ -29,7 +28,6 @@ async function loadCategoriesAdmin() {
         `)
         .join("");
 
-    // Fill category dropdown
     document.getElementById("item_category").innerHTML = categories
         .map(c => `<option value="${c.id}">${c.name_ru}</option>`)
         .join("");
@@ -55,8 +53,6 @@ async function deleteCategory(id) {
     await fetch(`${API}/categories/${id}`, { method: "DELETE" });
     loadCategoriesAdmin();
 }
-
-// ITEMS
 
 async function loadItemsAdmin() {
     const res = await fetch(`${API}/items`);
