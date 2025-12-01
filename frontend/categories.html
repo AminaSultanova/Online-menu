@@ -13,11 +13,57 @@
     <button class="lang-switch" onclick="toggleLanguage()">🌐</button>
 </header>
 
+<div class="carousel-wrapper">
+    <div class="carousel-container">
+
+        <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80');">
+            <div class="carousel-overlay"></div>
+            <div class="carousel-content">
+                <h2>Новое меню завтраков!</h2>
+                <p>Попробуйте наши свежие круассаны и ароматный кофе</p>
+            </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80');">
+            <div class="carousel-overlay"></div>
+            <div class="carousel-content">
+                <h2>Скидка 20% на десерты</h2>
+                <p>Только в эти выходные - сладкие предложения!</p>
+            </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&q=80');">
+            <div class="carousel-overlay"></div>
+            <div class="carousel-content">
+                <h2>Фирменный латте</h2>
+                <p>Наш бестселлер - идеальное начало дня</p>
+            </div>
+        </div>
+
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=1200&q=80');">
+            <div class="carousel-overlay"></div>
+            <div class="carousel-content">
+                <h2>Новинка: Чизкейк</h2>
+                <p>Нежный десерт по авторскому рецепту</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="carousel-dots">
+        <span class="carousel-dot active"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
+    </div>
+</div>
+
 <div class="container">
     <div class="category-list" id="categoryList"></div>
 </div>
 
 <script src="js/language.js"></script>
 <script src="js/menu.js"></script>
+<script src="js/carousel.js"></script>
 </body>
 </html>
