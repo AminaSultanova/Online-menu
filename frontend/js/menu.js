@@ -8,7 +8,7 @@ async function loadCategories() {
 
     document.getElementById("categoryList").innerHTML = categories
         .map(cat => `
-        <div class="card" onclick="openCategory(${cat.id})">
+        <div class="card" onclick="openCategory(${cat.id}, event)">
             <img src="${cat.image_url}">
             <h3>${lang === "ru" ? cat.name_ru : cat.name_en}</h3>
         </div>
@@ -36,13 +36,48 @@ async function loadItems() {
         .join("");
 }
 
-function openCategory(id) {
-    window.location.href = `items.html?cat=${id}`;
+// Улучшенная функция с плавным переходом
+function openCategory(id, event) {
+    // Находим кликнутую карточку
+    const card = event.currentTarget;
+    
+    // Добавляем эффект "выбрано"
+    card.style.transform = 'scale(0.95)';
+    card.style.opacity = '0.7';
+    
+    // Сохраняем ID выбранной категории
+    localStorage.setItem('selectedCategory', id);
+    
+    // Плавный переход через небольшую задержку
+    setTimeout(() => {
+        // Добавляем fade-out эффект для всей страницы
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.3s ease';
+        
+        setTimeout(() => {
+            window.location.href = `items.html?cat=${id}`;
+        }, 300);
+    }, 200);
 }
 
 function goBack() {
-    window.location.href = "categories.html";
+    // Плавный переход назад
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.3s ease';
+    
+    setTimeout(() => {
+        window.location.href = "categories.html";
+    }, 300);
 }
+
+// Fade-in при загрузке страницы
+window.addEventListener('DOMContentLoaded', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+        document.body.style.transition = 'opacity 0.4s ease';
+    }, 50);
+});
 
 if (location.pathname.includes("categories.html")) loadCategories();
 if (location.pathname.includes("items.html")) loadItems();
