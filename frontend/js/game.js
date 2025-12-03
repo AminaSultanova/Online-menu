@@ -1,5 +1,3 @@
-// Coffee Tower Game Logic
-
 class CoffeeTowerGame {
     constructor() {
         this.canvas = document.getElementById('gameCanvas');
