@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Tower Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body class="game-body">
+
+<div class="game-container">
+    <div class="game-header">
+        <button class="back-to-menu" onclick="goBackToMenu()">
+            ← <span data-lang-ru="Назад" data-lang-en="Back">Назад</span>
+        </button>
+        <h1 class="game-title" data-lang-ru="☕ Кофейная Башня" data-lang-en="☕ Coffee Tower">☕ Кофейная Башня</h1>
+        <button class="lang-switch-game" onclick="toggleLanguage()">🌐</button>
+    </div>
+
+    <div class="game-stats">
+        <div class="stat-card">
+            <div class="stat-label" data-lang-ru="Счёт" data-lang-en="Score">Счёт</div>
+            <div class="stat-value" id="currentScore">0</div>
+        </div>
+        <div class="stat-card highlight">
+            <div class="stat-label" data-lang-ru="Рекорд" data-lang-en="Best">Рекорд</div>
+            <div class="stat-value" id="bestScore">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label" data-lang-ru="Бонусы" data-lang-en="Bonuses">Бонусы</div>
+            <div class="stat-value" id="totalBonuses">0</div>
+        </div>
+    </div>
+
+    <div class="game-canvas-wrapper">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="gameOverScreen" class="game-over hidden">
+            <div class="game-over-content">
+                <h2 data-lang-ru="Игра окончена!" data-lang-en="Game Over!">Игра окончена!</h2>
+                <p class="final-score">
+                    <span data-lang-ru="Ваш счёт:" data-lang-en="Your score:">Ваш счёт:</span>
+                    <span id="finalScore">0</span>
+                </p>
+                <p class="bonuses-earned">
+                    <span data-lang-ru="Заработано бонусов:" data-lang-en="Bonuses earned:">Заработано бонусов:</span>
+                    <span id="bonusesEarned">0</span> 🎁
+                </p>
+                <button class="play-again-btn" onclick="restartGame()">
+                    <span data-lang-ru="Играть снова" data-lang-en="Play Again">Играть снова</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="startScreen" class="start-screen">
+            <div class="start-content">
+                <h2 data-lang-ru="☕ Построй кофейную башню!" data-lang-en="☕ Build a Coffee Tower!">☕ Построй кофейную башню!</h2>
+                <p data-lang-ru="Кликай, чтобы остановить чашку" data-lang-en="Click to stop the cup">Кликай, чтобы остановить чашку</p>
+                <p data-lang-ru="Чем точнее, тем больше баллов!" data-lang-en="The more accurate, the more points!">Чем точнее, тем больше баллов!</p>
+                <button class="start-btn" onclick="startGame()">
+                    <span data-lang-ru="Начать игру" data-lang-en="Start Game">Начать игру</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="game-instructions">
+        <p data-lang-ru="💡 Совет: старайся ставить чашки точно друг на друга!" data-lang-en="💡 Tip: try to place cups exactly on top of each other!">
+            💡 Совет: старайся ставить чашки точно друг на друга!
+        </p>
+    </div>
+</div>
+
+<script src="js/language.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

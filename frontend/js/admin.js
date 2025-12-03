@@ -10,8 +10,6 @@ function showTab(tab) {
     document.getElementById(tab).style.display = "block";
 }
 
-// CATEGORIES
-
 async function loadCategoriesAdmin() {
     const res = await fetch(`${API}/categories`);
     const categories = await res.json();

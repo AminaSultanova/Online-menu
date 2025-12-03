@@ -36,21 +36,15 @@ async function loadItems() {
         .join("");
 }
 
-// Улучшенная функция с плавным переходом
 function openCategory(id, event) {
-    // Находим кликнутую карточку
     const card = event.currentTarget;
     
-    // Добавляем эффект "выбрано"
     card.style.transform = 'scale(0.95)';
     card.style.opacity = '0.7';
     
-    // Сохраняем ID выбранной категории
     localStorage.setItem('selectedCategory', id);
     
-    // Плавный переход через небольшую задержку
     setTimeout(() => {
-        // Добавляем fade-out эффект для всей страницы
         document.body.style.opacity = '0';
         document.body.style.transition = 'opacity 0.3s ease';
         
@@ -61,7 +55,6 @@ function openCategory(id, event) {
 }
 
 function goBack() {
-    // Плавный переход назад
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.3s ease';
     
@@ -70,7 +63,6 @@ function goBack() {
     }, 300);
 }
 
-// Fade-in при загрузке страницы
 window.addEventListener('DOMContentLoaded', () => {
     document.body.style.opacity = '0';
     setTimeout(() => {

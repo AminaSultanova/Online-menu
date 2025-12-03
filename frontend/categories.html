@@ -62,6 +62,32 @@
     <div class="category-list" id="categoryList"></div>
 </div>
 
+<div class="bonus-button-container">
+    <button class="bonus-button" onclick="openGame()">
+        <span class="bonus-icon">🎁</span>
+        <span class="bonus-text" data-lang-ru="Получить бонусы" data-lang-en="Get Bonuses">Получить бонусы</span>
+        <span class="bonus-arrow">→</span>
+    </button>
+</div>
+
+<script>
+function openGame() {
+    window.location.href = 'game.html';
+}
+
+function updateBonusButtonText() {
+    const lang = localStorage.getItem("lang") || "ru";
+    const bonusText = document.querySelector('.bonus-text');
+    if (bonusText) {
+        bonusText.textContent = lang === "ru" 
+            ? bonusText.getAttribute('data-lang-ru')
+            : bonusText.getAttribute('data-lang-en');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', updateBonusButtonText);
+</script>
+
 <script src="js/language.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/carousel.js"></script>
