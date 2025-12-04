@@ -6,7 +6,7 @@ class CoffeeTowerGame {
         this.isPlaying = false;
         this.score = 0;
         this.bestScore = parseInt(localStorage.getItem('bestScore')) || 0;
-        this.totalBonuses = parseInt(localStorage.getItem('totalBonuses')) || 0;
+        this.totalBonuses = parseInt(localStorage.getItem('dessertBonuses')) || 0;
         
         this.blocks = [];
         this.currentBlock = null;
@@ -345,7 +345,7 @@ class CoffeeTowerGame {
             localStorage.setItem('bestScore', this.bestScore);
         }
         
-        localStorage.setItem('totalBonuses', this.totalBonuses);
+        localStorage.setItem('dessertBonuses', this.totalBonuses);
         
         document.getElementById('finalScore').textContent = this.score;
         document.getElementById('bonusesEarned').textContent = bonusesEarned;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game-select.css">
+</head>
+<body class="game-select-body">
+
+<div class="game-select-container">
+    <div class="game-select-header">
+        <button class="back-to-menu" onclick="goBackToMenu()">
+            ← <span data-lang-ru="Назад" data-lang-en="Back">Назад</span>
+        </button>
+        <h1 class="game-select-title" data-lang-ru="🎮 Выбери игру" data-lang-en="🎮 Choose Your Game">🎮 Выбери игру</h1>
+        <button class="lang-switch-game" onclick="toggleLanguage()">🌐</button>
+    </div>
+
+    <div class="subtitle" data-lang-ru="Играй и получай бонусы!" data-lang-en="Play and earn bonuses!">
+        Играй и получай бонусы!
+    </div>
+
+    <div class="games-grid">
+        
+        <div class="game-card tower-card" onclick="selectGame('tower')">
+            <div class="game-icon">☕🏗️</div>
+            <h2 data-lang-ru="Кофейная Башня" data-lang-en="Coffee Tower">Кофейная Башня</h2>
+            <p class="game-description" data-lang-ru="Строй башню из чашек кофе! Чем выше башня, тем больше бонусов." data-lang-en="Build a tower of coffee cups! The higher the tower, the more bonuses.">
+                Строй башню из чашек кофе! Чем выше башня, тем больше бонусов.
+            </p>
+            <div class="game-difficulty">
+                <span data-lang-ru="Сложность:" data-lang-en="Difficulty:">Сложность:</span>
+                <span class="stars">★★★☆☆</span>
+            </div>
+            <div class="bonus-info">
+                <span data-lang-ru="🍰 Бонусы на десерты:" data-lang-en="🍰 Dessert Bonuses:">🍰 Бонусы на десерты:</span>
+                <span class="bonus-count" id="dessertBonuses">0</span>
+            </div>
+            <button class="play-button" data-lang-ru="Играть" data-lang-en="Play">Играть</button>
+        </div>
+
+        <div class="game-card catcher-card" onclick="selectGame('catcher')">
+            <div class="game-icon">☕🎯</div>
+            <h2 data-lang-ru="Лови Кофе" data-lang-en="Coffee Catcher">Лови Кофе</h2>
+            <p class="game-description" data-lang-ru="Лови падающие ингредиенты! Собирай кофе и избегай испорченных продуктов." data-lang-en="Catch falling ingredients! Collect coffee and avoid spoiled items.">
+                Лови падающие ингредиенты! Собирай кофе и избегай испорченных продуктов.
+            </p>
+            <div class="game-difficulty">
+                <span data-lang-ru="Сложность:" data-lang-en="Difficulty:">Сложность:</span>
+                <span class="stars">★☆☆☆☆</span>
+            </div>
+            <div class="bonus-info">
+                <span data-lang-ru="☕ Бонусы на кофе:" data-lang-en="☕ Coffee Bonuses:">☕ Бонусы на кофе:</span>
+                <span class="bonus-count" id="coffeeBonuses">0</span>
+            </div>
+            <button class="play-button" data-lang-ru="Играть" data-lang-en="Play">Играть</button>
+        </div>
+
+    </div>
+
+    <div class="total-bonuses">
+        <h3 data-lang-ru="💰 Всего бонусов:" data-lang-en="💰 Total Bonuses:">💰 Всего бонусов:</h3>
+        <div class="total-count" id="totalBonuses">0</div>
+    </div>
+</div>
+
+<script src="js/language.js"></script>
+<script src="js/game-select.js"></script>
+</body>
+</html>

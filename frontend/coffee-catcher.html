@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Catcher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body class="game-body">
+
+<div class="game-container">
+    <!-- Header -->
+    <div class="game-header">
+        <button class="back-to-menu" onclick="goBackToSelect()">
+            ← <span data-lang-ru="Назад" data-lang-en="Back">Назад</span>
+        </button>
+        <h1 class="game-title" data-lang-ru="☕ Лови Кофе" data-lang-en="☕ Coffee Catcher">☕ Лови Кофе</h1>
+        <button class="lang-switch-game" onclick="toggleLanguage()">🌐</button>
+    </div>
+
+    <!-- Game Stats -->
+    <div class="game-stats">
+        <div class="stat-card">
+            <div class="stat-label" data-lang-ru="Счёт" data-lang-en="Score">Счёт</div>
+            <div class="stat-value" id="currentScore">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label" data-lang-ru="Жизни" data-lang-en="Lives">Жизни</div>
+            <div class="stat-value" id="livesDisplay">❤️❤️❤️</div>
+        </div>
+        <div class="stat-card highlight">
+            <div class="stat-label" data-lang-ru="Рекорд" data-lang-en="Best">Рекорд</div>
+            <div class="stat-value" id="bestScore">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label" data-lang-ru="☕ Бонусы" data-lang-en="☕ Bonuses">☕ Бонусы</div>
+            <div class="stat-value" id="totalBonuses">0</div>
+        </div>
+    </div>
+
+    <div class="game-canvas-wrapper">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="gameOverScreen" class="game-over hidden">
+            <div class="game-over-content">
+                <h2 data-lang-ru="Игра окончена!" data-lang-en="Game Over!">Игра окончена!</h2>
+                <p class="final-score">
+                    <span data-lang-ru="Ваш счёт:" data-lang-en="Your score:">Ваш счёт:</span>
+                    <span id="finalScore">0</span>
+                </p>
+                <p class="bonuses-earned">
+                    <span data-lang-ru="Заработано бонусов:" data-lang-en="Bonuses earned:">Заработано бонусов:</span>
+                    <span id="bonusesEarned">0</span> ☕
+                </p>
+                <button class="play-again-btn" onclick="restartGame()">
+                    <span data-lang-ru="Играть снова" data-lang-en="Play Again">Играть снова</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="startScreen" class="start-screen">
+            <div class="start-content">
+                <h2 data-lang-ru="☕ Лови правильные ингредиенты!" data-lang-en="☕ Catch the right ingredients!">☕ Лови правильные ингредиенты!</h2>
+                <div class="instructions">
+                    <p data-lang-ru="✅ Лови:" data-lang-en="✅ Catch:">✅ Лови:</p>
+                    <p style="font-size: 24px;">☕ 🥛 🍯 🧊</p>
+                    <p data-lang-ru="❌ Избегай:" data-lang-en="❌ Avoid:">❌ Избегай:</p>
+                    <p style="font-size: 24px;">🦠 💀</p>
+                    <p data-lang-ru="Управление: мышка, стрелки или свайп" data-lang-en="Controls: mouse, arrows or swipe">Управление: мышка, стрелки или свайп</p>
+                </div>
+                <button class="start-btn" onclick="startGame()">
+                    <span data-lang-ru="Начать игру" data-lang-en="Start Game">Начать игру</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-instructions">
+        <p data-lang-ru="💡 Совет: следи за плохими ингредиентами!" data-lang-en="💡 Tip: watch out for bad ingredients!">
+            💡 Совет: следи за плохими ингредиентами!
+        </p>
+    </div>
+</div>
+
+<script src="js/language.js"></script>
+<script src="js/coffee-catcher.js"></script>
+</body>
+</html>
